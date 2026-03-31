@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fortune Teller</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #e0d7ff;
+      padding: 1.5rem;
+    }
+
+    .logo {
+      width: 80px;
+      margin-bottom: 1rem;
+      border-radius: 12px;
+      opacity: 0.9;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.3rem;
+      background: linear-gradient(90deg, #c084fc, #f0abfc, #fde68a);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      color: #a59ec2;
+      margin-bottom: 2rem;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      max-width: 440px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+    }
+
+    .crystal-ball {
+      font-size: 4rem;
+      margin-bottom: 1.2rem;
+      display: block;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    #fortune-text {
+      font-size: 1.25rem;
+      line-height: 1.6;
+      min-height: 2rem;
+      color: #e2d9f3;
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    #fortune-text.visible {
+      opacity: 1;
+    }
+
+    button {
+      background: linear-gradient(135deg, #7c3aed, #a855f7);
+      color: white;
+      border: none;
+      padding: 0.8rem 2rem;
+      font-size: 1.05rem;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      letter-spacing: 0.03em;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 20px rgba(168, 85, 247, 0.45);
+    }
+
+    button:active {
+      transform: scale(0.97);
+    }
+
+    footer {
+      margin-top: 2.5rem;
+      font-size: 0.8rem;
+      color: #6b6190;
+    }
+
+    footer a {
+      color: #a78bfa;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <img src="src/logo_doqa.webp" alt="doqa logo" class="logo">
+  <h1>Fortune Teller</h1>
+  <p class="subtitle">Ask the crystal ball what fate has in store&hellip;</p>
+
+  <div class="card">
+    <span class="crystal-ball" aria-hidden="true">&#x1F52E;</span>
+    <p id="fortune-text"></p>
+    <button id="reveal-btn">Reveal My Fortune</button>
+  </div>
+
+  <footer>
+    Built by doqa &middot; Learning full-stack dev on
+    <a href="https://www.freecodecamp.org" target="_blank" rel="noopener">freeCodeCamp</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
